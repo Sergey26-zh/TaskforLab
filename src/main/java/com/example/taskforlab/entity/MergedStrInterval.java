@@ -11,15 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "merged_interval")
-public class MergedInterval {
+@Table(name = "merged_str_interval")
+public class MergedStrInterval {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "start")
-    private Object start;
+    @Column(name = "start_interval")
+    private String start;
 
-    @Column(name = "end")
-    private Object end;
+    @Column(name = "end_interval")
+    private String end;
 }
