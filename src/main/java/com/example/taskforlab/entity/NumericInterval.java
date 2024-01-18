@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "merged_num_interval")
-public class MergedNumInterval {
+@Table(name = "num_interval")
+public class NumericInterval {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

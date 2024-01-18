@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MergedStrIntervalRepository extends JpaRepository<MergedStrInterval, Long> {
+public interface MergedStrRepository extends JpaRepository<MergedStrInterval, Long> {
 }
