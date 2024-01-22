@@ -18,8 +18,8 @@ public class MergedStrInterval {
     private long id;
 
     @Column(name = "start_interval")
-    private String start;
+    private Character start;
 
     @Column(name = "end_interval")
-    private String end;
+    private Character end;
 }
