@@ -49,29 +49,13 @@ public class MergedService {
     }
 
     public MergedNumDto getMinNumericInterval() {
-        List<MergedNumInterval> mergedNumIntervals = mergedNumRepository.findAll();
-
-        if (mergedNumIntervals.isEmpty()) {
-            return null;
-        }
-
-        MergedNumInterval minNumInterval = Collections.min(mergedNumIntervals,
-                Comparator.comparing(MergedNumInterval::getStart));
-
-        return numericIntervalMapper.toDto(minNumInterval);
+        MergedNumInterval minNumInterval = mergedNumRepository.findMinNumericInterval();
+        return (minNumInterval != null) ? numericIntervalMapper.toDto(minNumInterval) : null;
     }
 
     public MergedStrDto getMinStringInterval() {
-        List<MergedStrInterval> mergedStrIntervals = mergedStrRepository.findAll();
-
-        if (mergedStrIntervals.isEmpty()) {
-            return null;
-        }
-
-        MergedStrInterval minStrInterval = Collections.min(mergedStrIntervals,
-                Comparator.comparing(MergedStrInterval::getStart));
-
-        return strIntervalMapper.toDto(minStrInterval);
+        MergedStrInterval minStrInterval = mergedStrRepository.findMinStringInterval();
+        return (minStrInterval != null) ? strIntervalMapper.toDto(minStrInterval) : null;
     }
 
     private List<StringIntervalDto> mergeStringIntervals(List<StringIntervalDto> stringIntervals) {
