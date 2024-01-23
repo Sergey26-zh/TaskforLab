@@ -7,6 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StringIntervalDto {
-    private Character start;
-    private Character end;
+    private String start;
+    private String end;
 }
