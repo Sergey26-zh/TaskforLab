@@ -22,8 +22,12 @@ repositories {
 }
 
 dependencies {
+	testImplementation(platform("org.junit:junit-bom:5.9.1"))
+	testImplementation("org.junit.jupiter:junit-jupiter")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	testImplementation ("org.mockito:mockito-core:5.8.0")
+	testImplementation ("org.mockito:mockito-junit-jupiter:5.8.0")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")

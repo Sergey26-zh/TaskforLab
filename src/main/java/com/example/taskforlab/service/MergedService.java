@@ -58,7 +58,7 @@ public class MergedService {
         return (minStrInterval != null) ? strIntervalMapper.toDto(minStrInterval) : null;
     }
 
-    private List<StringIntervalDto> mergeStringIntervals(List<StringIntervalDto> stringIntervals) {
+    public List<StringIntervalDto> mergeStringIntervals(List<StringIntervalDto> stringIntervals) {
         stringIntervals.sort(Comparator.comparing(StringIntervalDto::getStart));
 
         List<StringIntervalDto> mergedIntervals = new ArrayList<>();
@@ -91,7 +91,7 @@ public class MergedService {
         return str1.compareTo(str2) >= 0 ? str1 : str2;
     }
 
-    private List<NumericIntervalDto> mergeNumericIntervals(List<NumericIntervalDto> numericIntervals) {
+    public List<NumericIntervalDto> mergeNumericIntervals(List<NumericIntervalDto> numericIntervals) {
         numericIntervals.sort(Comparator.comparing(NumericIntervalDto::getStart));
 
         List<NumericIntervalDto> mergedIntervals = new ArrayList<>();
